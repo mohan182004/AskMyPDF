@@ -72,9 +72,13 @@
 - **Business:** Analyze reports, contracts, or manuals.
 
 
-## License
 
-This project currently does not have a license specified.
+## Demo
+![Application Demo](demo.png)
+
+
+
+
 
 
             
