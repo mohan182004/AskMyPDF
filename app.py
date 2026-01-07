@@ -159,8 +159,9 @@ def handle_question():
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+if "user_input" not in st.session_state:
+    st.session_state["user_input"] = ""
 
-# Replace the text area and Send button with a single-line text input (original behavior)
 question = st.text_input(
     "",
     placeholder="Ask anything",
@@ -208,7 +209,6 @@ if uploaded_files:
             try:
                 result = qa_chain.invoke({"question": question, "chat_history": st.session_state.chat_history})
                 st.session_state.chat_history.append((question, result["answer"]))
-                st.session_state["user_input"] = ""  # Clear the input bar
                 st.markdown(f'<div class="chat-bubble"><b>Bot:</b> {result["answer"]}</div>', unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"❌ LLM Error: {e}")
@@ -247,5 +247,6 @@ if st.session_state.chat_history:
             st.markdown(f'<div class="chat-bubble"><b>Bot:</b> {a}</div>', unsafe_allow_html=True)
 else:
     st.info("Please upload at least one PDF to start chatting.")
+
 
 st.markdown("</div>", unsafe_allow_html=True)
