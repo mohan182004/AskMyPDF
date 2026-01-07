@@ -2,12 +2,12 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 from custom_llm import GithubGPT41LLM
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.documents import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.schema import Document
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_core.memory import ConversationBufferMemory
-from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
+from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from PyPDF2 import PdfReader
 
 load_dotenv()
@@ -250,5 +250,6 @@ else:
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
