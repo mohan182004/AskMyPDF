@@ -7,4 +7,5 @@ langchain-core
 langchain-huggingface
 openai
 sentence-transformers
+langchain_text_splitters
 chromadb
