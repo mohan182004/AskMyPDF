@@ -6,8 +6,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.memory import ConversationBufferMemory
-from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
+from langchain_core.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
 from PyPDF2 import PdfReader
 
 load_dotenv()
@@ -250,4 +250,5 @@ else:
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
