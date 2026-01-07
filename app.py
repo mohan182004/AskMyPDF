@@ -2,8 +2,8 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 from custom_llm import GithubGPT41LLM
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.memory import ConversationBufferMemory
@@ -250,3 +250,4 @@ else:
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
